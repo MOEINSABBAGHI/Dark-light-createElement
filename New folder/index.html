@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      a {
+        margin-right: 30px;
+        text-decoration: none;
+        color: black;
+        background-color: rgb(0, 132, 255);
+        padding: 10px 15px;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="show"></div>
+
+    <script>
+      const menu = [
+        {
+          name: "home",
+          URL: "index.html",
+          tooltip: "sample tooltip 1",
+        },
+        {
+          name: "sell",
+          URL: "https://www.google.com",
+          tooltip: "sample tooltip 2",
+        },
+        {
+          name: "about us",
+          URL: "https://www.youtube.com",
+          tooltip: "sample tooltip 3",
+        },
+      ];
+
+      function editor(menu) {
+        let example = document.getElementById('show');
+       
+        menu.forEach(function(item) {
+          let linkmaker=document.createElement('a');
+          linkmaker.textContent=item.name
+          linkmaker.href=item.URL
+          linkmaker.target='_blank';
+          linkmaker.title=item.tooltip;
+          //linkmaker.classlist.add('a');
+          example.appendChild(linkmaker);
+        });
+      }
+      editor(menu);
+      
+    </script>
+  </body>
+</html>
